@@ -46,7 +46,7 @@ button {
 
 .row {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 
@@ -90,14 +90,32 @@ button {
     color: navy;
 }
 
-.section {
+section {
     padding: 0 32px;
 }
 
 .section__tag {
     font-size: 16px;
     color: navy;
+    letter-spacing: 1.6px;
     font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section__title {
+    color: rgba(36, 62, 99);
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.5;
+    margin: 16px 0;
+    letter-spacing: 0.025em;
+}
+
+.section__para {
+    font-size: 18px;
+    font-weight: 500px;
+    color: #7c8ba1;
+    line-height: 1.625;
 }
 
 #landing {
@@ -114,6 +132,7 @@ main {
 /* NAVBAR */
 
 nav {
+    width: 100%;
     display: flex;
     padding-top: 32px;
 }
@@ -150,27 +169,41 @@ nav {
 
 }
 
-.nav__link , .nav__link--login {
-    position: relative;
+.nav__links {
+    display: flex;
+    align-items: center;
+    padding-bottom: 2px;
+    
+}
+
+.nav__link, .nav__link--login {
     font-size: 14px;
     font-weight: 600;
-    border-bottom: 2px solid transparent;
-    margin: 0 48px;
     padding-top: 4px;
+    letter-spacing: 0.35px;
+    border-bottom: 2px solid transparent;
+    margin: 0 24px;
+    position: relative;
+    transition: all 300ms ease;
+}
+
+.nav__link--login {
+    margin-left: 64px;
 }
 
 .nav__link--primary {
     background-color: navy;
-    box-sizing: border-box;
-    border-radius: 32px;
+    border-radius: 9999px;
     color: white;
+    min-width: 120px;
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 21px;
+    line-height: 1.5;
+    border: none;
     margin-top: 2px;
+    margin-left: 24px;
     padding: 10px 32px;
-    position: relative;
+    width: auto;
+    transition: all 300ms ease;
 }
 
 .nav__link--login {
@@ -178,13 +211,7 @@ nav {
 }
 
 
-.nav__links {
-    display: flex;
-    padding: 0 64px;
-    align-items: center;
-    padding-bottom: 2px;
-    
-}
+
 
 .btn__menu {
     display: none;
@@ -206,6 +233,7 @@ nav {
     border-radius: 8px;
     z-index: 4;
     visibility: hidden;
+    opacity: 0;
     transition: all 300ms ease;
 }
 
@@ -366,50 +394,23 @@ align-items: center;
 max-width: 1024px;
 }
 
-.section__tag {
-    color: navy;
-    font-size: 16px;
-    font-weight: 700;
-
-}
-
-.section__title {
-    color: rgba(36, 62, 99);
-    font-size: 48px;
-    font-weight: 900;
-    line-height: 72px;
-    margin: 16px 0;
-    text-align: center;
-}
-
-.section__para {
-    color: rgb(124, 139, 161);
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 29.25px;
-    max-width: 576px;
-    text-align: center;
-}
-
 .features {
     display: flex;
     flex-wrap: wrap;
-    color: rgba(36, 62, 99);
     margin-top: 40px;
-    max-width: 768px;
-
 }
 
 .feature {
-    color: rgba(36, 62, 99);
-    display: flex;
     width: calc(100% / 3);
+}
+
+#features .section__title, #pricing .section__title {
+    text-align: center;
 }
 
 .feature__row {
     align-items: flex-start;
     display: flex;
-    color: rgba(36, 62, 99);
     padding: 32px 24px;
 }
 
@@ -425,6 +426,15 @@ display: flex;
 padding: 20px;
 border: 1px solid #e5e7eb;
 border-radius: 500px; 
+}
+
+.feature__para {
+    margin-top: 16px;
+    font-size: 16px;
+    max-width: calc(634px / 3);
+    color: rgb(124, 139, 161);
+    line-height: 2;
+    font-weight: 500;
 }
 
 .feature__text {
@@ -450,12 +460,6 @@ margin-top: 8px;
     line-height: 1.25;
 }
 
-.section__title {
-    color: rgba(36, 62, 99);
-    font-size: 48px;
-    font-weight: 900;
-    margin: 16px 0;
-}
 
 .quality__description , quality__img--wrapper {
 width: 50%;
@@ -529,9 +533,6 @@ STEPS ↓
 }
 
 .steps__description {
-    display: flex;
-    width: 50%;
-    flex-direction: column;
     padding: 32px 0;
     padding-left: 64px;
 
@@ -539,9 +540,8 @@ STEPS ↓
 
 .step {
     display: flex;
-    flex-direction: column;
-align-items: flex-start;
-margin-top: 32px;
+    align-items: flex-start;
+    margin-top: 32px;
 }
 
 .step__number {
@@ -603,12 +603,6 @@ VALUES ↓
     padding: 32px 64px 32px 0;
 }
 
-.section__tag {
-    color: navy;
-    font-size: 16px;
-    font-weight: 700;
-
-}
 
 #values .section__title {
     color: rgba(36, 62, 99);
@@ -700,10 +694,6 @@ PRICING ↓
     align-items: center;
 }
 
-#pricing .section__title {
-    text-align: center;
-}
-
 #pricing .section__para {
     max-width: 576px;
     text-align: center;
@@ -711,8 +701,8 @@ PRICING ↓
 
 .plans {
     display: flex;
-    flex-wrap: wrap;
     position: relative;
+    flex-direction: row;
     width: 100%;
     justify-content: space-between;
 }
@@ -721,12 +711,13 @@ PRICING ↓
     position: relative;
     margin-top: 64px;
     display: flex;
-    width: (100%/3);
+    width: 100%;
     max-width: 384px;
     flex-direction: column;
     border-radius: 8px;
     background-color: white;
     padding-left: 32px;
+    padding-right: 32px;
     margin-right: 32px;
     padding-top: 8px;
     text-align: center;
@@ -803,7 +794,8 @@ PRICING ↓
 }
 
 .plan__middle {
-margin: 0 0 0 -32px;
+margin-left: -32px;
+margin-right: -32px;
 display: flex;
 flex: 1 1 0%;
 flex-direction: column;
@@ -1227,6 +1219,12 @@ MOBILE RESPONSIVENESS ↓
     h1 {
         font-size: 30px;
     }
+    
+    .nav__link--primary {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        flex-wrap: wrap;    
+    }
 
     .header__description--para {
         font-size: 16px;
@@ -1242,9 +1240,7 @@ MOBILE RESPONSIVENESS ↓
 @media (max-width: 1024px) {
 
     .btn__menu {
-        display: flex;
-        margin-left: 800px;
-        align-items: flex-end;
+    display: block; 
     }
 
     h1 {
@@ -1288,12 +1284,29 @@ MOBILE RESPONSIVENESS ↓
         font-size: 48px;
     }
 
+    .section__title {
+        font-size: 36px;
+    }
+
     .section__para {
     font-size: 16px;    
     }
 
     .features {
         max-width: 768px;
+    }
+
+    .feature {
+        width: calc(50%);
+    }
+
+    .feature__row {
+        padding: 32px 8px;
+        margin: 0 16px;
+    }
+
+    .feature__para {
+        max-width: none;
     }
 
     .plans {
@@ -1340,8 +1353,16 @@ MOBILE RESPONSIVENESS ↓
         flex-direction: column;
         align-items: center;
     }
+
+    
+
     #pricing .row {
         margin-top: 40px;
+    }
+
+    .btn-menu {
+        top: 10px; 
+        right: 10px; 
     }
 
     .section__para {
@@ -1350,6 +1371,14 @@ MOBILE RESPONSIVENESS ↓
 
     .features {
         justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+        
+
+    .feature {
+        width: auto;
+        max-width: 384px;
     }
 
     .quality__description, .quality__img--wrapper, .steps__description, 
@@ -1376,7 +1405,7 @@ MOBILE RESPONSIVENESS ↓
 
     .footer__bottom {
         flex-direction: column;
-        align-items: center;
+     
     }
 
     .footer__socials {
@@ -1418,6 +1447,7 @@ MOBILE RESPONSIVENESS ↓
         letter-spacing: 0.05em;
     }
 
+    
     #features .section__title, #pricing .section__title {
         font-size: 36px;
     }
